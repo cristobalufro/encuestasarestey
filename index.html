@@ -8,22 +8,33 @@
 </head>
 <body>
     <div class="container">
-        <h1>Visor de Encuestas</h1>
+        <h1>Visor de ancuestas y análisis</h1>
         <div class="tabs">
-            <button class="tab-button active" data-tab="socioeconomicas">Encuestas Socioeconómicas de Salud</button>
+            <button class="tab-button active" data-tab="original">Encuestas originales</button>
+            <button class="tab-button" data-tab="coded">Encuestas codificadas</button>
+            <button class="tab-button" data-tab="codebook">Libro de códigos</button>
             <button class="tab-button" data-tab="fc">Encuestas FC</button>
         </div>
         <input type="text" id="search-input" placeholder="Buscar en la tabla actual...">
+        <button id="export-all">Exportar todo a Excel</button>
         
-        <div id="socioeconomicas" class="tab-content active">
-            <h2>Encuestas Socioeconómicas de Salud</h2>
-            <button id="export-socioeconomicas">Exportar a Excel</button>
-            <div id="survey-container-socioeconomicas" class="survey-container"></div>
+        <div id="original" class="tab-content active">
+            <h2>Encuestas Originales (Socioeconómicas)</h2>
+            <div id="survey-container-original" class="survey-container"></div>
+        </div>
+        
+        <div id="coded" class="tab-content">
+            <h2>Encuestas codificadas</h2>
+            <div id="survey-container-coded" class="survey-container"></div>
+        </div>
+
+        <div id="codebook" class="tab-content">
+            <h2>Libro de códigos</h2>
+            <div id="survey-container-codebook" class="survey-container"></div>
         </div>
         
         <div id="fc" class="tab-content">
             <h2>Encuestas FC</h2>
-            <button id="export-fc">Exportar a Excel</button>
             <div id="survey-container-fc" class="survey-container"></div>
         </div>
     </div>
