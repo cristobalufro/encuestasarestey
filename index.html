@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuestas socioeconomicas de salud</title>
+    <title>Visor de Encuestas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Encuestas socioeconomicas de salud</h1>
-        <input type="text" id="search-input" placeholder="Buscar...">
-        <button id="export-to-excel">Exportar a Excel</button>
-        <div id="survey-container"></div>
+        <h1>Visor de Encuestas</h1>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="socioeconomicas">Encuestas Socioeconómicas de Salud</button>
+            <button class="tab-button" data-tab="fc">Encuestas FC</button>
+        </div>
+        <input type="text" id="search-input" placeholder="Buscar en la tabla actual...">
+        
+        <div id="socioeconomicas" class="tab-content active">
+            <h2>Encuestas Socioeconómicas de Salud</h2>
+            <button id="export-socioeconomicas">Exportar a Excel</button>
+            <div id="survey-container-socioeconomicas" class="survey-container"></div>
+        </div>
+        
+        <div id="fc" class="tab-content">
+            <h2>Encuestas FC</h2>
+            <button id="export-fc">Exportar a Excel</button>
+            <div id="survey-container-fc" class="survey-container"></div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="script.js"></script>

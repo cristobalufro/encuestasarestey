@@ -1,5 +1,6 @@
 import openpyxl
 import json
+import argparse
 
 def excel_to_json(excel_file, json_file):
     """
@@ -22,5 +23,10 @@ def excel_to_json(excel_file, json_file):
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 if __name__ == '__main__':
-    excel_to_json('kobo_data_export.xlsx', 'kobo_data_export.json')
-    print("Conversion from Excel to JSON is complete.")
+    parser = argparse.ArgumentParser(description='Convert Excel file to JSON file.')
+    parser.add_argument('excel_file', help='The path to the input Excel file.')
+    parser.add_argument('json_file', help='The path to the output JSON file.')
+    args = parser.parse_args()
+
+    excel_to_json(args.excel_file, args.json_file)
+    print(f"Conversion from '{args.excel_file}' to '{args.json_file}' is complete.")
